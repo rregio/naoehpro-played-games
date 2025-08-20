@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações de Jogos</title>
+    <!-- Inclui o Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inclui a fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Inclui Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2gVfF5A4+24eRj6z4t0x995Pz77Xm6o78/J1gY/h9/y8u7I+6u5X9i5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+    }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 p-8 flex flex-col items-center min-h-screen">
+
+    <!-- Título atualizado para algo mais amigável -->
+    <h1 class="text-4xl font-bold mb-4 text-center text-indigo-400">Jogatinas do NaoEhPro</h1>
+
+    <!-- Parágrafo introdutório, com o link para o canal -->
+    <p class="text-lg text-gray-400 mb-8 max-w-2xl text-center">
+        Aqui está uma seleção de jogos que o NaoEhPro já jogou, com imagens e vídeos gravados diretamente do canal. Confira mais no <a href="https://youtube.com/@naoehpro" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition-colors duration-200 underline">canal do YouTube</a>!
+    </p>
+    
+    <!-- Contêiner da lista principal de jogos -->
+    <div id="game-list-view" class="w-full max-w-6xl">
+        <!-- Campo de busca -->
+        <input type="text" id="search-input" placeholder="Pesquisar jogos por título ou palavra-chave..." class="w-full p-3 mb-6 rounded-lg border border-gray-600 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-colors duration-200">
+
+        <div id="game-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Os cartões de jogos serão exibidos aqui -->
+        </div>
+
+        <!-- Contêiner para a média das notas -->
+        <div id="average-rating-container" class="mt-8 pt-4 border-t border-gray-700 w-full text-center">
+            <h2 class="text-xl font-bold text-gray-300 mb-2">Média das Notas</h2>
+            <div id="average-rating-display" class="flex items-center justify-center text-xl text-yellow-400">
+                <!-- A média das estrelas e o valor serão injetados aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contêiner da página de detalhes do jogo (inicialmente oculto) -->
+    <div id="game-detail-view" class="w-full max-w-4xl bg-gray-800 p-8 rounded-xl shadow-lg hidden">
+        <button id="back-button" class="mb-6 px-4 py-2 rounded-lg bg-gray-700 text-gray-300 hover:bg-gray-600 transition-colors duration-200">
+            <i class="fas fa-arrow-left mr-2"></i>Voltar</button>
+        <div id="detail-content">
+            <!-- O conteúdo do jogo selecionado será injetado aqui -->
+        </div>
+    </div>
+
+    <script>
+        // Dados JSON fornecidos pelo usuário
+        const gamesData = [
+            {
+                "titulo": "Fortnite",
+                "plataforma": "PS5",
+                "nota": 4.5,
+                "avaliacao": "Simplesmente o melhor jogo as a service atualmente.",
+                "link": "https://fortnite.com",
+                "gameplay": "https://youtube.com/live/D9gnC7yaHcE",
+                "palavras-chave": ["competitivo", "battle royalle", "game as a service"]
+            },
+            {
+                "titulo": "Minecraft",
+                "plataforma": "PS5",
+                "nota": 4.5,
+                "avaliacao": "Simplesmente o melhor jogo de sobrevivência já criado, muitos reclamam de seus gráficos mas ele pra mim é simplesmente o melhor.",
+                "link": "https://www.minecraft.net",
+                "gameplay": "https://youtube.com/live/8shsVyvVQ_s",
+                "palavras-chave": ["sobrevivência", "construção", "recursos"]
+            },
+            {
+                "titulo": "Terrária",
+                "plataforma": "PC - Steam",
+                "nota": 2.5,
+                "avaliacao": "Legalzinho de jogar e construir as paradas mas com o tempo fica muito enjoativo.",
+                "link": "https://store.steampowered.com/app/105600/Terraria/",
+                "gameplay": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/terraria/4/44/2011-09-15_00002.jpg",
+                "palavras-chave": ["construção", "recursos", "2d", "frontview", "sobrevivência"]
+            },
+        ];
+
+        // Obtém os elementos principais da UI
+        const gameContainer = document.getElementById('game-container');
+        const gameListView = document.getElementById('game-list-view');
+        const gameDetailView = document.getElementById('game-detail-view');
+        const detailContent = document.getElementById('detail-content');
+        const backButton = document.getElementById('back-button');
+        const searchInput = document.getElementById('search-input');
+        const averageRatingDisplay = document.getElementById('average-rating-display');
+
+        /**
+         * Gera uma string HTML com ícones de estrelas com base em uma nota.
+         * @param {number} rating A nota do jogo (0 a 5).
+         * @returns {string} Uma string HTML com ícones de estrelas cheias e vazias.
+         */
+        function generateStarRating(rating) {
+            let starsHtml = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating - fullStars >= 0.5;
+            
+            for (let i = 0; i < fullStars; i++) {
+                starsHtml += `<i class="fas fa-star"></i>`;
+            }
+            if (hasHalfStar) {
+                starsHtml += `<i class="fas fa-star-half-alt"></i>`;
+            }
+            const emptyStars = 5 - (fullStars + (hasHalfStar ? 1 : 0));
+            for (let i = 0; i < emptyStars; i++) {
+                starsHtml += `<i class="far fa-star"></i>`;
+            }
+            return starsHtml;
+        }
+
+        /**
+         * Calcula e exibe a nota média de um array de jogos.
+         * @param {Array<Object>} games O array de jogos para calcular a média.
+         */
+        function calculateAndDisplayAverageRating(games) {
+            if (!games || games.length === 0) {
+                averageRatingDisplay.innerHTML = `<span class="text-gray-500">N/A</span>`;
+                return;
+            }
+
+            const totalRating = games.reduce((sum, game) => sum + game.nota, 0);
+            const averageRating = totalRating / games.length;
+            const averageRatingRounded = averageRating.toFixed(1);
+
+            const starsHtml = generateStarRating(averageRating);
+
+            averageRatingDisplay.innerHTML = `
+                ${starsHtml}
+                <span class="ml-2 font-semibold text-gray-300">${averageRatingRounded} / 5</span>
+            `;
+        }
+
+        /**
+         * Exibe a página de detalhes para um jogo específico.
+         * @param {Object} game O objeto do jogo a ser exibido.
+         */
+        function showGameDetail(game) {
+            // Oculta a lista e exibe a visualização de detalhes
+            gameListView.classList.add('hidden');
+            gameDetailView.classList.remove('hidden');
+
+            let gameplayMediaHtml = '';
+            // Regex para capturar IDs de vídeos do YouTube (incluindo links de vídeos, embeds e lives)
+            const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|live\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+            const gameplayMatch = game.gameplay.match(youtubeRegex);
+
+            if (gameplayMatch && gameplayMatch[1]) {
+                // É um link do YouTube, cria um player de vídeo em um iframe
+                const videoId = gameplayMatch[1];
+                gameplayMediaHtml = `
+                    <div class="relative w-full aspect-video mb-6 rounded-xl overflow-hidden shadow-md">
+                        <!-- O autoplay e mute foram removidos para que o usuário controle o vídeo -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/${videoId}" 
+                            frameborder="0" 
+                            class="absolute inset-0 w-full h-full"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                `;
+            } else {
+                // Não é um link do YouTube, assume que é uma imagem
+                gameplayMediaHtml = `
+                    <div class="relative w-full aspect-video mb-6 rounded-xl overflow-hidden shadow-md">
+                        <img src="${game.gameplay}" alt="Gameplay de ${game.titulo}" class="w-full h-full object-cover">
+                    </div>
+                `;
+            }
+
+            // Gera o conteúdo HTML para a página de detalhes
+            detailContent.innerHTML = `
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6">
+                    <h2 class="text-4xl font-extrabold text-indigo-400">${game.titulo}</h2>
+                    <div class="flex items-center text-xl mt-2 md:mt-0 text-yellow-400">
+                        ${generateStarRating(game.nota)}
+                        <span class="ml-3 font-semibold text-gray-300">${game.nota.toFixed(1)} / 5</span>
+                    </div>
+                </div>
+                
+                <div class="text-lg text-gray-400 mb-4">
+                    <i class="fas fa-gamepad"></i>
+                    <span class="ml-2">${game.plataforma}</span>
+                </div>
+                
+                ${gameplayMediaHtml}
+
+                <div class="mb-6">
+                    <p class="text-xl text-gray-200 leading-relaxed italic">${game.avaliacao}</p>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-gray-300 mb-2">Palavras-chave:</h3>
+                    <div class="flex flex-wrap gap-2">
+                        ${game['palavras-chave'].map(keyword => `<span class="bg-indigo-900 text-indigo-200 text-sm font-medium px-2.5 py-0.5 rounded-full">${keyword}</span>`).join('')}
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="${game.link}" target="_blank" class="w-full flex-grow flex items-center justify-center bg-indigo-500 text-white py-3 px-6 rounded-lg font-bold transition duration-200 hover:bg-indigo-600">
+                        <i class="fas fa-external-link-alt mr-2"></i>Ir para o Site
+                    </a>
+                </div>
+            `;
+        }
+
+        /**
+         * Exibe a lista de jogos novamente, ocultando a página de detalhes.
+         */
+        function showGameList() {
+            gameDetailView.classList.add('hidden');
+            gameListView.classList.remove('hidden');
+        }
+
+        /**
+         * Filtra os jogos com base no termo de busca e atualiza a exibição.
+         */
+        function filterGames() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredGames = gamesData.filter(game => {
+                const title = game.titulo.toLowerCase();
+                const keywords = game['palavras-chave'].join(' ').toLowerCase();
+                return title.includes(searchTerm) || keywords.includes(searchTerm);
+            });
+            displayGames(filteredGames);
+        }
+
+        /**
+         * Gera e injeta os cartões de jogos no contêiner HTML.
+         * @param {Array<Object>} games O array de jogos a ser exibido.
+         */
+        function displayGames(games = gamesData) {
+            gameContainer.innerHTML = '';
+            
+            // Corrige o problema: garante que games é um array antes de iterar.
+            const gamesToDisplay = Array.isArray(games) ? games : [];
+
+            if (gamesToDisplay.length === 0) {
+                gameContainer.innerHTML = `<p class="text-center text-gray-400 mt-8 col-span-full">Nenhum jogo encontrado com este termo.</p>`;
+            } else {
+                gamesToDisplay.forEach(game => {
+                    const card = document.createElement('div');
+                    card.classList.add('bg-gray-800', 'p-6', 'rounded-xl', 'shadow-lg', 'transform', 'transition', 'duration-300', 'hover:scale-105', 'hover:shadow-xl', 'flex', 'flex-col', 'justify-between', 'cursor-pointer');
+                    
+                    // Adiciona um evento de clique ao cartão para exibir os detalhes
+                    card.onclick = () => showGameDetail(game);
+
+                    card.innerHTML = `
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-2 text-indigo-400 hover:underline">
+                                ${game.titulo}
+                            </h2>
+                            <div class="text-sm text-gray-400 mb-2">
+                                <i class="fas fa-gamepad"></i>
+                                <span class="ml-1">${game.plataforma}</span>
+                            </div>
+                            <div class="flex items-center text-sm text-yellow-400 mb-4">
+                                ${generateStarRating(game.nota)}
+                                <span class="ml-2 font-medium text-gray-300">${game.nota.toFixed(1)} / 5</span>
+                            </div>
+                            <p class="text-gray-200 mb-4 truncate">${game.avaliacao}</p>
+                        </div>
+                        
+                        <div class="flex gap-2 flex-wrap">
+                            ${game['palavras-chave'].map(keyword => `<span class="bg-gray-700 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">${keyword}</span>`).join('')}
+                        </div>
+                    `;
+
+                    gameContainer.appendChild(card);
+                });
+            }
+
+            // Chama a função para calcular e exibir a média das notas da lista atual
+            calculateAndDisplayAverageRating(gamesToDisplay);
+        }
+
+        // Adiciona um evento de clique ao botão de voltar
+        backButton.addEventListener('click', showGameList);
+
+        // Adiciona um evento de 'input' para o campo de busca, filtrando em tempo real
+        searchInput.addEventListener('input', filterGames);
+
+        // Inicia a exibição dos jogos logo no carregamento da página
+        displayGames();
+    </script>
+</body>
+</html>
