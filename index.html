@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avaliações de Jogos</title>
+    <title>Jogatinas do NaoEhPro</title>
     <!-- Inclui o Tailwind CSS para estilização rápida e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inclui a fonte Inter -->
@@ -15,7 +15,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-    }
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100 p-8 flex flex-col items-center min-h-screen">
@@ -34,7 +34,7 @@
         <input type="text" id="search-input" placeholder="Pesquisar jogos por título ou palavra-chave..." class="w-full p-3 mb-6 rounded-lg border border-gray-600 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-colors duration-200">
 
         <div id="game-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Os cartões de jogos serão exibidos aqui -->
+            <p class="text-center text-gray-400 mt-8 col-span-full">Carregando jogos...</p>
         </div>
 
         <!-- Contêiner para a média das notas -->
@@ -56,36 +56,8 @@
     </div>
 
     <script>
-        // Dados JSON fornecidos pelo usuário
-        const gamesData = [
-            {
-                "titulo": "Fortnite",
-                "plataforma": "PS5",
-                "nota": 4.5,
-                "avaliacao": "Simplesmente o melhor jogo as a service atualmente.",
-                "link": "https://fortnite.com",
-                "gameplay": "https://youtube.com/live/D9gnC7yaHcE",
-                "palavras-chave": ["competitivo", "battle royalle", "game as a service"]
-            },
-            {
-                "titulo": "Minecraft",
-                "plataforma": "PS5",
-                "nota": 4.5,
-                "avaliacao": "Simplesmente o melhor jogo de sobrevivência já criado, muitos reclamam de seus gráficos mas ele pra mim é simplesmente o melhor.",
-                "link": "https://www.minecraft.net",
-                "gameplay": "https://youtube.com/live/8shsVyvVQ_s",
-                "palavras-chave": ["sobrevivência", "construção", "recursos"]
-            },
-            {
-                "titulo": "Terrária",
-                "plataforma": "PC - Steam",
-                "nota": 2.5,
-                "avaliacao": "Legalzinho de jogar e construir as paradas mas com o tempo fica muito enjoativo.",
-                "link": "https://store.steampowered.com/app/105600/Terraria/",
-                "gameplay": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/terraria/4/44/2011-09-15_00002.jpg",
-                "palavras-chave": ["construção", "recursos", "2d", "frontview", "sobrevivência"]
-            },
-        ];
+        // Variável global para armazenar os dados dos jogos após o carregamento
+        let gamesData = [];
 
         // Obtém os elementos principais da UI
         const gameContainer = document.getElementById('game-container');
@@ -160,7 +132,6 @@
                 const videoId = gameplayMatch[1];
                 gameplayMediaHtml = `
                     <div class="relative w-full aspect-video mb-6 rounded-xl overflow-hidden shadow-md">
-                        <!-- O autoplay e mute foram removidos para que o usuário controle o vídeo -->
                         <iframe 
                             src="https://www.youtube.com/embed/${videoId}" 
                             frameborder="0" 
@@ -240,10 +211,9 @@
          * Gera e injeta os cartões de jogos no contêiner HTML.
          * @param {Array<Object>} games O array de jogos a ser exibido.
          */
-        function displayGames(games = gamesData) {
+        function displayGames(games) {
             gameContainer.innerHTML = '';
             
-            // Corrige o problema: garante que games é um array antes de iterar.
             const gamesToDisplay = Array.isArray(games) ? games : [];
 
             if (gamesToDisplay.length === 0) {
@@ -291,8 +261,29 @@
         // Adiciona um evento de 'input' para o campo de busca, filtrando em tempo real
         searchInput.addEventListener('input', filterGames);
 
-        // Inicia a exibição dos jogos logo no carregamento da página
-        displayGames();
+        /**
+         * Busca os dados dos jogos do arquivo JSON e exibe na página.
+         */
+        async function fetchGamesData() {
+            try {
+                // URL do arquivo JSON no GitHub
+                const response = await fetch('https://raw.githubusercontent.com/rregio/naoehpro-played-games/main/gamesplayed.json');
+                if (!response.ok) {
+                    throw new Error(`Erro ao carregar o arquivo JSON: ${response.statusText}`);
+                }
+                gamesData = await response.json();
+                
+                // Exibe os jogos carregados
+                displayGames(gamesData);
+            } catch (error) {
+                console.error("Erro ao carregar os dados dos jogos:", error);
+                gameContainer.innerHTML = `<p class="text-center text-red-400 mt-8 col-span-full">Ops! Não foi possível carregar os jogos. Tente novamente mais tarde.</p>`;
+                calculateAndDisplayAverageRating([]); // Zera a média em caso de erro
+            }
+        }
+
+        // Inicia o carregamento dos jogos ao carregar a página
+        fetchGamesData();
     </script>
 </body>
 </html>
