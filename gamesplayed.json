@@ -61,8 +61,27 @@
         "link": "https://www.playstation.com/pt-br/games/diablo-iv/",
         "gameplay": "https://youtube.com/live/H8VQyMe7CfE?feature=share",
 		"palavras-chave": ["mmorpg","historia","demonios"]
-    }
+    },
+	{
+        "titulo": "GrowUp",
+        "plataforma": "PC - Steam",
+		"nota": 2,
+        "avaliacao": "Jogo com uma temática de escalada espacial, onde controlamos um robozinho chamado bud. E ele usa umas flores para escalar o mais alto possível, legal e interessante com uma pegada dificil. Não tenho uma gameplay pois tinha no meu antigo canal que o apaguei então segue uma gameplay aleatória.",
+        "link": "https://store.steampowered.com/app/426790/Grow_Up/",
+        "gameplay": "https://www.youtube.com/watch?v=OtCOE4w4Aag",
+		"palavras-chave": ["escalada","espacial","flor"]
+    },
+	{
+		"titulo": "Jusant",
+        "plataforma": "PS5",
+		"nota": 2.5,
+        "avaliacao": "Jogo com uma temática de escalada em um deserto onde tem uma torre que devemos fazer voltar a agua no lugar. No jogo temos um bixinho que pode fazer a vida voltar ao lugar e nos ajudar em nossa escalada, o jogo tem umas pegadas parecidas com o GrowUp mas Jusant parece ter uma história muito mais bem elaborada.",
+        "link": "https://store.playstation.com/pt-br/product/UP5898-PPSA10263_00-4289150323068456",
+        "gameplay": "https://youtu.be/53lv0yWBZFM",
+		"palavras-chave": ["escalada","deserto","água"]
+	}
 ]
+
 
 
 
