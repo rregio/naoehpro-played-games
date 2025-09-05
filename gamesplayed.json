@@ -138,5 +138,26 @@
         "gameplay": "https://www.youtube.com/live/fET-VNrINao?si=IE4EAXdDawvLuKCO",
         "palavras-chave": ["roguelike", "dungeon crawler", "pixel art", "shooter", "indie", "desafio", "masmorra", "ps5"],
         "data-adicao": "05/09/2025"
-    }
+    },
+	{
+		"titulo": "Brawlhalla",
+		"plataforma": "PS4/5",
+		"nota": 3.5,
+		"avaliacao": "Um jogo feito em estilo 2D que tem o estilo parecido com o game da Nintendo SuperSmashBros (então sim ele é de plataforma mas com lutas e combos e tudo mais), onde nosso objetivo é derrubar nosso inimigo da plataforma com socos e armas. É um jogo famoso por ter um modo competitivo e joguei muito na epoca da Pandemia ( de 2020 a 2023), é gratuito então esse é um ponto positivo, é leve (ao menos eu acho) e se não tem outros jogos eu o jogaria novamente com certeza. Como não tenho jogado ele eu ainda não trouxe uma gameplay dele, então segue uma tirada do canal Estação Brawlhalla (canal brasileiro que transmite o competitivo) no video acima.",
+		"link": "https://store.steampowered.com/app/291550/Brawlhalla/",
+		"gameplay": "https://youtu.be/bO6lXx3fRbc?si=yww9S04myAxLcfE2&t=25",
+		"palavras-chave": ["luta", "plataforma", "competitivo", "multiplayer", "gratuito", "2D", "ação", "multiplataforma"],
+		"data-adicao": "05/09/2025"
+	},
+	{
+		"titulo": "Necesse",
+		"plataforma": "PC - Steam",
+		"nota": 4.5,
+		"avaliacao": "Um jogo feito em estilo 2D (pixel art), onde na verdade ele é parecido com Minecraft e Terraria. Sim nascemos em uma ilha e devemos pegar recursos para avançar no jogo. Mas ele tem a visão TopDown (vista de cima, se é que posso chamar de isométrica??) e no jogo devemos explorar as cavernas e outras ilhas para conseguir mais itens e avançar no game. O jogo é um dos que está na lista dos games que sempre jogo, então ele é bom, gostoso de jogar e leve pra pcs fracos. Recomendo viu, pegue ele na promoção da Steam, vale a pena.",
+		"link": "https://store.steampowered.com/app/1169040/Necesse/",
+		"gameplay": "https://youtu.be/ktTsR9Q-eV8?si=CwgiyGfOOSjoELSj",
+		"palavras-chave": ["sobrevivência", "construção", "recursos", "mundo aberto", "pixel art", "rpg", "indie", "leve", "multiplayer"],
+		"data-adicao": "05/09/2025"
+	}
 ]
+
