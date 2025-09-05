@@ -113,78 +113,84 @@
             `;
         }
 
-        /**
-         * Exibe a página de detalhes para um jogo específico.
-         * @param {Object} game O objeto do jogo a ser exibido.
-         */
-        function showGameDetail(game) {
-            // Oculta a lista e exibe a visualização de detalhes
-            gameListView.classList.add('hidden');
-            gameDetailView.classList.remove('hidden');
+    /**
+ * Exibe a página de detalhes para um jogo específico.
+ * @param {Object} game O objeto do jogo a ser exibido.
+ */
+function showGameDetail(game) {
+    // Oculta a lista e exibe a visualização de detalhes
+    gameListView.classList.add('hidden');
+    gameDetailView.classList.remove('hidden');
 
-            let gameplayMediaHtml = '';
-            // Regex para capturar IDs de vídeos do YouTube (incluindo links de vídeos, embeds e lives)
-            const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|live\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
-            const gameplayMatch = game.gameplay.match(youtubeRegex);
+    let gameplayMediaHtml = '';
+    // Regex para capturar IDs de vídeos do YouTube (incluindo links de vídeos, embeds e lives)
+    const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|live\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+    const gameplayMatch = game.gameplay.match(youtubeRegex);
 
-            if (gameplayMatch && gameplayMatch[1]) {
-                // É um link do YouTube, cria um player de vídeo em um iframe
-                const videoId = gameplayMatch[1];
-                gameplayMediaHtml = `
-                    <div class="relative w-full aspect-video mb-6 rounded-xl overflow-hidden shadow-md">
-                        <iframe 
-                            src="https://www.youtube.com/embed/${videoId}" 
-                            frameborder="0" 
-                            class="absolute inset-0 w-full h-full"
-                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                `;
-            } else {
-                // Não é um link do YouTube, assume que é uma imagem
-                gameplayMediaHtml = `
-                    <div class="relative w-full aspect-video mb-6 rounded-xl overflow-hidden shadow-md">
-                        <img src="${game.gameplay}" alt="Gameplay de ${game.titulo}" class="w-full h-full object-cover">
-                    </div>
-                `;
-            }
+    if (gameplayMatch && gameplayMatch[1]) {
+        // É um link do YouTube, cria um player de vídeo em um iframe
+        const videoId = gameplayMatch[1];
+        gameplayMediaHtml = `
+            <div class="relative w-full aspect-video mb-6 rounded-xl overflow-hidden shadow-md">
+                <iframe 
+                    src="https://www.youtube.com/embed/${videoId}" 
+                    frameborder="0" 
+                    class="absolute inset-0 w-full h-full"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        `;
+    } else {
+        // Não é um link do YouTube, assume que é uma imagem
+        gameplayMediaHtml = `
+            <div class="relative w-full aspect-video mb-6 rounded-xl overflow-hidden shadow-md">
+                <img src="${game.gameplay}" alt="Gameplay de ${game.titulo}" class="w-full h-full object-cover">
+            </div>
+        `;
+    }
 
-            // Gera o conteúdo HTML para a página de detalhes
-            detailContent.innerHTML = `
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6">
-                    <h2 class="text-4xl font-extrabold text-indigo-400">${game.titulo}</h2>
-                    <div class="flex items-center text-xl mt-2 md:mt-0 text-yellow-400">
-                        ${generateStarRating(game.nota)}
-                        <span class="ml-3 font-semibold text-gray-300">${game.nota.toFixed(1)} / 5</span>
-                    </div>
-                </div>
-                
-                <div class="text-lg text-gray-400 mb-4">
-                    <i class="fas fa-gamepad"></i>
-                    <span class="ml-2">${game.plataforma}</span>
-                </div>
-                
-                ${gameplayMediaHtml}
+    // Gera o conteúdo HTML para a página de detalhes
+    detailContent.innerHTML = `
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6">
+            <h2 class="text-4xl font-extrabold text-indigo-400">${game.titulo}</h2>
+            <div class="flex items-center text-xl mt-2 md:mt-0 text-yellow-400">
+                ${generateStarRating(game.nota)}
+                <span class="ml-3 font-semibold text-gray-300">${game.nota.toFixed(1)} / 5</span>
+            </div>
+        </div>
 
-                <div class="mb-6">
-                    <p class="text-xl text-gray-200 leading-relaxed italic">${game.avaliacao}</p>
-                </div>
+        <div class="flex items-center text-lg text-gray-400 mb-4 justify-between">
+            <div>
+                <i class="fas fa-gamepad"></i>
+                <span class="ml-2">${game.plataforma}</span>
+            </div>
+            <div>
+                <i class="far fa-calendar-alt"></i>
+                <span class="ml-2">Adicionado em: ${game['data-adicao']}</span>
+            </div>
+        </div>
 
-                <div class="mb-6">
-                    <h3 class="text-lg font-bold text-gray-300 mb-2">Palavras-chave:</h3>
-                    <div class="flex flex-wrap gap-2">
-                        ${game['palavras-chave'].map(keyword => `<span class="bg-indigo-900 text-indigo-200 text-sm font-medium px-2.5 py-0.5 rounded-full">${keyword}</span>`).join('')}
-                    </div>
-                </div>
+        ${gameplayMediaHtml}
 
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="${game.link}" target="_blank" class="w-full flex-grow flex items-center justify-center bg-indigo-500 text-white py-3 px-6 rounded-lg font-bold transition duration-200 hover:bg-indigo-600">
-                        <i class="fas fa-external-link-alt mr-2"></i>Ir para o Site
-                    </a>
-                </div>
-            `;
-        }
+        <div class="mb-6">
+            <p class="text-xl text-gray-200 leading-relaxed italic">${game.avaliacao}</p>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-bold text-gray-300 mb-2">Palavras-chave:</h3>
+            <div class="flex flex-wrap gap-2">
+                ${game['palavras-chave'].map(keyword => `<span class="bg-indigo-900 text-indigo-200 text-sm font-medium px-2.5 py-0.5 rounded-full">${keyword}</span>`).join('')}
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="${game.link}" target="_blank" class="w-full flex-grow flex items-center justify-center bg-indigo-500 text-white py-3 px-6 rounded-lg font-bold transition duration-200 hover:bg-indigo-600">
+                <i class="fas fa-external-link-alt mr-2"></i>Ir para o Site
+            </a>
+        </div>
+    `;
+}
 
         /**
          * Exibe a lista de jogos novamente, ocultando a página de detalhes.
