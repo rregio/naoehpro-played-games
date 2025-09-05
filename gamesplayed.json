@@ -6,7 +6,8 @@
         "avaliacao": "Simplesmente o melhor jogo as a service atualmente.",
         "link": "https://fortnite.com",
         "gameplay": "https://youtu.be/h3SIHJNTf0E",
-		"palavras-chave": ["competitivo","battle royalle","game as a service"]
+		"palavras-chave": ["competitivo","battle royalle","game as a service"],
+		"data-adicao": "20/08/2025"
     },
     {
         "titulo": "Minecraft",
@@ -15,7 +16,8 @@
         "avaliacao": "Simplesmente o melhor jogo de sobrevivência já criado, muitos reclamam de seus gráficos mas ele pra mim é simplesmente o melhor.",
         "link": "https://www.minecraft.net",
         "gameplay": "https://youtube.com/live/LGK0sYQrqtY?feature=share",
-		"palavras-chave": ["sobrevivência","construção","recursos"]
+		"palavras-chave": ["sobrevivência","construção","recursos"],
+		"data-adicao": "20/08/2025"
     },
 	{
         "titulo": "Terrária",
@@ -24,7 +26,8 @@
         "avaliacao": "Legalzinho de jogar e construir as paradas mas com o tempo fica muito enjoativo.",
         "link": "https://store.steampowered.com/app/105600/Terraria/",
         "gameplay": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/terraria/4/44/2011-09-15_00002.jpg",
-		"palavras-chave": ["construção","recursos","2d","frontview","sobrevivência"]
+		"palavras-chave": ["construção","recursos","2d","frontview","sobrevivência"],
+		"data-adicao": "20/08/2025"
     },
 	{
         "titulo": "Harvest Moon - Mad Dash",
@@ -33,7 +36,9 @@
         "avaliacao": "Parece um jogo de celular, parecido com aqueles de combinar coisas da mesma cor sabe? Sinceramente o preço de hoje não vale nem se fosse abaixo de 50 reais (hoje está a R$ 114).",
         "link": "https://store.playstation.com/pt-br/product/UP1014-CUSA16636_00-HMMADDASH0000000",
         "gameplay": "https://youtu.be/wA1Vvdy2Wog",
-		"palavras-chave": ["combinação","mobile-like","agricultura"]
+		"palavras-chave": ["combinação","mobile-like","agricultura"],
+		"data-adicao": "21/08/2025"
+		
     },
 	{
         "titulo": "DayZ",
@@ -42,7 +47,8 @@
         "avaliacao": "É um jogo de sobrevivência, e geralmente gosto de jogos desse estilo, mas a jogatina dele é muito mais complicada. Tipo pra usar uns itens temos que colocar ele na mão do personagem e isso dificulta muito na hora de jogar além de outros problemas que não me recordo agora.",
         "link": "https://store.playstation.com/pt-br/product/UP2739-CUSA15510_00-DAYZ000000000001",
         "gameplay": "https://youtube.com/live/3eE4Zrm9AU8",
-		"palavras-chave": ["sobrevivência","apocalipse","zumbi"]
+		"palavras-chave": ["sobrevivência","apocalipse","zumbi"],
+		"data-adicao": "21/08/2025"
     },
 	{
         "titulo": "Harvest Moon - Light of Hope",
@@ -51,7 +57,8 @@
         "avaliacao": "Esse já é muito parecido com os jogos anteriores da série Harvest Moon, apesar de a história ser um pouco diferente (nele só aparecemos numa ilha onde tem um farol e devemos ligar todas as luzes desse, e nos outros jogos da série nosso avô falece e devemos cuidar da fazenda dele) mas nada impede de esta ser uma boa série de HM. Muito bom e com a jogabilidade parecida com os antigos jogos da série.",
         "link": "https://store.playstation.com/pt-br/product/UP1014-CUSA09973_00-HARVESTMOONLOHSE",
         "gameplay": "https://image.api.playstation.com/cdn/UP1014/CUSA09973_00/FREE_CONTENTffPBN9xoFBM7pwQwoIY2/PREVIEW_SCREENSHOT1_164354.jpg",
-		"palavras-chave": ["fazenda","agricultura","relacionamento"]
+		"palavras-chave": ["fazenda","agricultura","relacionamento"],
+		"data-adicao": "21/08/2025"
     },
 	{
         "titulo": "Diablo IV",
@@ -60,7 +67,8 @@
         "avaliacao": "Não havia jogado nenhum jogo dessa série e testei o game não dando nada pra ele.<br>Após a primeira jogatina já gostei do game, ele tem uma pegada estilo jogo MMORPG dos anos 2k e acho que foi isso que me atraiu no game. Não sei quanto a veracidade do que vou falar aqui, mas o game apesar de ter uma pegada meio dark ele não parece venerar demonios e coisas assim, muito pelo contrário pois arrebentamos eles na porada.",
         "link": "https://www.playstation.com/pt-br/games/diablo-iv/",
         "gameplay": "https://youtube.com/live/H8VQyMe7CfE?feature=share",
-		"palavras-chave": ["mmorpg","historia","demonios"]
+		"palavras-chave": ["mmorpg","historia","demonios"],
+		"data-adicao": "22/08/2025"
     },
 	{
         "titulo": "GrowUp",
@@ -69,7 +77,8 @@
         "avaliacao": "Jogo com uma temática de escalada espacial, onde controlamos um robozinho chamado bud. E ele usa umas flores para escalar o mais alto possível, legal e interessante com uma pegada dificil. Não tenho uma gameplay pois tinha no meu antigo canal que o apaguei então segue uma gameplay aleatória.",
         "link": "https://store.steampowered.com/app/426790/Grow_Up/",
         "gameplay": "https://www.youtube.com/watch?v=OtCOE4w4Aag",
-		"palavras-chave": ["escalada","espacial","flor"]
+		"palavras-chave": ["escalada","espacial","flor"],
+		"data-adicao": "22/08/2025"
     },
 	{
 		"titulo": "Jusant",
@@ -78,7 +87,8 @@
         "avaliacao": "Jogo com uma temática de escalada em um deserto onde tem uma torre que devemos fazer voltar a agua no lugar. No jogo temos um bixinho que pode fazer a vida voltar ao lugar e nos ajudar em nossa escalada, o jogo tem umas pegadas parecidas com o GrowUp mas Jusant parece ter uma história muito mais bem elaborada.",
         "link": "https://store.playstation.com/pt-br/product/UP5898-PPSA10263_00-4289150323068456",
         "gameplay": "https://youtu.be/53lv0yWBZFM",
-		"palavras-chave": ["escalada","deserto","água"]
+		"palavras-chave": ["escalada","deserto","água"],
+		"data-adicao": "22/08/2025"
 	},
 	{
 		"titulo": "Furi",
@@ -87,7 +97,8 @@
         "avaliacao": "Um jogo que é baseado somente em boss fight, ele na verdade parece aqueles jogos de navinhas antigos, apesar disso o jogo é legal e dificil bagarai.<br>Era gratis na PSN na época do PS4 (assim que comprei o meu) e vi ele na recomendação novamente e joguei, foi bom relembrar mas é dificil.",
         "link": "https://store.playstation.com/pt-br/concept/217102",
         "gameplay": "https://www.youtube.com/watch?v=QvD5IvvmpH0",
-		"palavras-chave": ["boss fight", "espada", "tiro", "nave"]
+		"palavras-chave": ["boss fight", "espada", "tiro", "nave"],
+		"data-adicao": "23/08/2025"
 	},
 	{
 		"titulo": "Roube um brainrot",
@@ -96,7 +107,8 @@
         "avaliacao": "Apenas um dos muitos jogos de tycoon do Roblox, é legal pra passar o tempo mas só isso. Só não esquecer que as crianças realmente choravam por esse jogo kkkk",
         "link": "https://www.roblox.com/pt/games/109983668079237/Steal-a-Brainrot",
         "gameplay": "https://youtu.be/RKjiqKnLyB0",
-		"palavras-chave": ["brainrot", "tycoon", "roubo", "choro","roblox","brainrot","jogos","generosidade","gameplay","jogosonline", "momentosdivertidos"]
+		"palavras-chave": ["brainrot", "tycoon", "roubo", "choro","roblox","brainrot","jogos","generosidade","gameplay","jogosonline", "momentosdivertidos"],
+		"data-adicao": "23/08/2025"
 	},
 	{
 		"titulo": "Days Gone",
@@ -105,7 +117,8 @@
         "avaliacao": "Um jogo que tem de tudo pra dar certo, a premissa de zumbis e motos me parece perfeita. E o jopgo é bom apesar de não ter jogado muito (cerca de 2 horas e 40 minutos) mas me pareceu legal a vibe de sair pelo mundo explorando com sua bike com um mundo apocaliptico. Gostaria de ter jogado mais um pouco.",
         "link": "https://www.playstation.com/pt-br/games/days-gone/",
         "gameplay": "https://youtube.com/live/f-PATzZvxf4?feature=share",
-		"palavras-chave": ["days gone","days gone gameplay","live gameplay","zumbis","motos","sobrevivencia","mundo aberto","ação","aventura","deacon st john","playstation","pc","gameplay em portugues","games","jogos","streaming","live stream","days gone inicio","days gone historia","games 2019","dias que se foram"]
+		"palavras-chave": ["days gone","days gone gameplay","live gameplay","zumbis","motos","sobrevivencia","mundo aberto","ação","aventura","deacon st john","playstation","pc","gameplay em portugues","games","jogos","streaming","live stream","days gone inicio","days gone historia","games 2019","dias que se foram"],
+		"data-adicao": "28/08/2025"
 	},
 	{
 		"titulo": "Star Wars Battlefront II",
@@ -114,7 +127,8 @@
         "avaliacao": "Um jogo da saga Star Wars em um jogo que parece um pouco com os jogos da série BattleField, apesar de o jogo parecer focar mais na guerra de naves (novamente joguei por cerca de 2 horas e 50 minutos). PS.: ",
         "link": "https://www.playstation.com/pt-br/games/star-wars-battlefront-ii/",
         "gameplay": "https://youtube.com/live/NKnW5TrjLHc",
-		"palavras-chave": ["days gone","days gone gameplay","live gameplay","zumbis","motos","sobrevivencia","mundo aberto","ação","aventura","deacon st john","playstation","pc","gameplay em portugues","games","jogos","streaming","live stream","days gone inicio","days gone historia","games 2019","dias que se foram"]
+		"palavras-chave": ["days gone","days gone gameplay","live gameplay","zumbis","motos","sobrevivencia","mundo aberto","ação","aventura","deacon st john","playstation","pc","gameplay em portugues","games","jogos","streaming","live stream","days gone inicio","days gone historia","games 2019","dias que se foram"],
+		"data-adicao": "28/08/2025"
 	},
 	{
 		"titulo": "Exit The Gungeon",
@@ -123,9 +137,11 @@
         "avaliacao": "Um jogo em pixelart de desafios onde temos que sair de uma dungeon, mas ele é feito (ao menos o que presenciei) com muitos elementos que podem parecer repetitivos. Entre os pontos positivos estão uma boa pixel art, armas das mais variadas com uma jogabilidade muito legal, além do preço que o peguei (apesar de ser uma promoção) cerca de R$ 11,50. E entre os pontos negativos estão que as telas parecem ser muito repetitivas (ou sou eu que sou muito ruim kkkk).<br>Ps.: Comprei esse jogo antes de ontem (dia 03/09/2025) por menos de R$ 12 e agora quando estou escrevendo isto ele está a R$55",
         "link": "https://store.playstation.com/pt-br/product/UP3643-CUSA23188_00-EXITTHEGUNGEONUS",
         "gameplay": "https://www.youtube.com/live/fET-VNrINao?si=IE4EAXdDawvLuKCO",
-		"palavras-chave": ["days gone","days gone gameplay","live gameplay","zumbis","motos","sobrevivencia","mundo aberto","ação","aventura","deacon st john","playstation","pc","gameplay em portugues","games","jogos","streaming","live stream","days gone inicio","days gone historia","games 2019","dias que se foram"]
+		"palavras-chave": ["days gone","days gone gameplay","live gameplay","zumbis","motos","sobrevivencia","mundo aberto","ação","aventura","deacon st john","playstation","pc","gameplay em portugues","games","jogos","streaming","live stream","days gone inicio","days gone historia","games 2019","dias que se foram"],
+		"data-adicao": "05/09/2025"
 	}
 ]
+
 
 
 
