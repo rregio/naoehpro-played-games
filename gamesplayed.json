@@ -153,10 +153,30 @@
 		"titulo": "Necesse",
 		"plataforma": "PC - Steam",
 		"nota": 4.5,
-		"avaliacao": "Um jogo feito em estilo 2D (pixel art), onde na verdade ele é parecido com Minecraft e Terraria. Sim nascemos em uma ilha e devemos pegar recursos para avançar no jogo. Mas ele tem a visão TopDown (vista de cima, se é que posso chamar de isométrica??) e no jogo devemos explorar as cavernas e outras ilhas para conseguir mais itens e avançar no game. O jogo é um dos que está na lista dos games que sempre jogo, então ele é bom, gostoso de jogar e leve pra pcs fracos. Recomendo viu, pegue ele na promoção da Steam, vale a pena.",
+		"avaliacao": "Um jogo feito em estilo 2D (pixel art), onde na verdade ele é parecido com Minecraft e Terraria. Sim nascemos em uma ilha e devemos pegar recursos para avançar no jogo. Mas ele tem a visão TopDown (vista de cima, se é que posso chamar de isométrica??) e no jogo devemos explorar as cavernas e outras ilhas para conseguir mais itens e avançar no game. O jogo é um dos que está na lista dos games que sempre jogo, então ele é bom, gostoso de jogar e leve pra pcs fracos. Recomendo viu, pegue ele na promoção da Steam, vale a pena. O game tem multiplayer mas nunca joguei ele com outras pessoas.",
 		"link": "https://store.steampowered.com/app/1169040/Necesse/",
 		"gameplay": "https://youtu.be/ktTsR9Q-eV8?si=CwgiyGfOOSjoELSj",
 		"palavras-chave": ["sobrevivência", "construção", "recursos", "mundo aberto", "pixel art", "rpg", "indie", "leve", "multiplayer"],
+		"data-adicao": "05/09/2025"
+	},
+	{
+		"titulo": "Don't Starve Together",
+		"plataforma": "PC - Steam",
+		"nota": 3.5,
+		"avaliacao": "Outro jogo 2D de sobrevivência, este na verdade é mais isométrico do que qualquer outro que já vi (nele você pode rotar a visão de 90 em 90 graus. E esse é um jogo mais dificil de sobreviver pois á noite tudo te ataca, você deve acender algo com fogo (como uma tocha, fogueira, uma árvore, etc) pra não morrer. O game é legal mas nunca sobrevivo muito nesse game mas ele tem uma pegada diferente que o torna legal de jogar e também o jogo direto. O jogo também tem multiplayer mas, novamente, nunca joguei ele com outras pessoas. Ah e novamente não tenho uma gameplay dele no canal, então segue um video pra eu ver depois.",
+		"link": "https://store.steampowered.com/app/322330",
+		"gameplay": "https://youtu.be/bVpsJB7mptY?si=Fh4ejieCbBiPtl3H",
+		"palavras-chave": ["sobrevivência", "construção", "mundo aberto", "multiplayer", "indie", "isométrico", "desafiador", "terror", "pc"],
+		"data-adicao": "05/09/2025"
+	},
+	{
+		"titulo": "Série The Sims",
+		"plataforma": "PC - Steam",
+		"nota": 4.5,
+		"avaliacao": "Finalmente um jogo 3D, e esse sim joguei toda a série (desde o 1), muito legal ele por completo. Nem tenho muito o que comentar pois o jogo é famoso bagarai (pra não falar um palavrão), o jogo é top demais e sempre que jogo passo várias horas o jogando. Enfim é um jogo perfeito na minha opinião. Pra ser perfeito deveria não cobrar tanto pelas expansões, visto que o game hoje em dia é gratuito, mas as expansões são bem caras e geralmente jogo sem elas. Ah e o game também é multiplataforma (PC, PS e XBOX) mas acho (90% de certeza) que ele não é multiplayer. E por ter jogado no pc também não tenho live dele no canal, mas segue uma gameplay aleatória.",
+		"link": "https://store.steampowered.com/app/1222670/The_Sims_4/",
+		"gameplay": "https://youtu.be/gx3GCkUuJzM?si=B44QVkoa8Xxtkm8y",
+		"palavras-chave": ["simulador", "simulador de vida", "construção", "gestão", "sandbox", "3D", "casual", "pc"],
 		"data-adicao": "05/09/2025"
 	}
 ]
