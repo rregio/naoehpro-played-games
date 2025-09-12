@@ -178,7 +178,8 @@
 		"gameplay": "https://youtu.be/gx3GCkUuJzM?si=B44QVkoa8Xxtkm8y",
 		"palavras-chave": ["simulador", "simulador de vida", "construção", "gestão", "sandbox", "3D", "casual", "pc"],
 		"data-adicao": "05/09/2025"
-	},{
+	},
+	{
 		"titulo": "Dishonored: Death of the Outsider",
 		"plataforma": "PS5",
 		"nota": 2,
@@ -187,5 +188,25 @@
 		"gameplay": "https://youtube.com/live/L80UVrA8oBU?feature=share",
 		"palavras-chave": ["stealth", "ação", "fps", "desafiador", "aventura", "ps5"],
 		"data-adicao": "09/09/2025"
+	},
+	{
+		"titulo": "Psychonauts 2",
+		"plataforma": "PS5",
+		"nota": 3,
+		"avaliacao": "E aí, galera! Na live de hoje, mergulhamos no mundo de Psychonauts 2, um game que me chamou a atenção por tratar de problemas mentais. A ideia pareceu bem legal no começo, mas, pra ser sincero, o jogo aprofunda demais. Ele usa termos bem técnicos, como /'bagagem mental/' e /'censor com bloqueios'/, e isso acabou me cansando um pouco. Além do tema, a jogabilidade no início é muito focada em plataforma, e o /'pule aqui, pule ali/' e /'colete isso e aquilo/' acabou ficando um pouco enjoativo para mim. Por ser um jogo com um tema tão diferente e com gráficos bonitos, eu daria uma nota 3 no máximo. Pode ser que melhore depois, mas confesso que não me prendeu o suficiente para seguir em frente.",
+		"link": "https://store.playstation.com/pt-br/product/UP6312-CUSA27145_00-PSYCHONAUTS2SIEA",
+		"gameplay": "https://www.youtube.com/live/Zgf_gf8PKGk?si=sLA3JSShNyWGS1RU",
+		"palavras-chave": ["plataforma", "aventura", "3D", "psicologia", "saúde mental", "narrativa", "história", "ps5"],
+		"data-adicao": "12/09/2025"
+	},
+	{
+		"titulo": "Undertale",
+		"plataforma": "PS5",
+		"nota": 2,
+		"avaliacao": "Testando UnderTale pela primeira vez no PS5. Já joguei ele no PC e sinceramente não gostei... E agora (logo após a jogatina) informo que mantenho minha opinião, e pra ser sincero nem sei porque joguei o game novamente e já imaginava que seria assim, e o game ainda não me prendeu para dizer que jogaria o game novamente. Por ser no console achei que teria algo a mais, mas as minhas percepções do game continuam a mesma, deu sono de jogar pois era muito papo, difícil de manter a jogatina. Por já conhecer um pouco da lore e saber que ele tem uma história muito bem elaborada consigo dar uma nota 2 no máximo.",
+		"link": "https://store.playstation.com/pt-br/product/UP3893-CUSA08801_00-0414152186658084",
+		"gameplay": "https://youtube.com/live/wxzmWXa05Zg",
+		"palavras-chave": ["rpg", "indie", "história", "narrativa", "diálogo", "aventura", "ps5"],
+		"data-adicao": "12/09/2025"
 	}
 ]
