@@ -282,24 +282,37 @@ function showGameDetail(game) {
         /**
          * Busca os dados dos jogos do arquivo JSON e exibe na página.
          */
-        async function fetchGamesData() {
-            try {
-                // URL do arquivo JSON no GitHub
-                const response = await fetch('https://raw.githubusercontent.com/rregio/naoehpro-played-games/main/gamesplayed.json');
-                if (!response.ok) {
-                    throw new Error(`Erro ao carregar o arquivo JSON: ${response.statusText}`);
-                }
-                gamesData = await response.json();
-                
-                // Exibe os jogos carregados
-                displayGames(gamesData);
-            } catch (error) {
-                console.error("Erro ao carregar os dados dos jogos:", error);
-                gameContainer.innerHTML = `<p class="text-center text-red-400 mt-8 col-span-full">Ops! Não foi possível carregar os jogos. Tente novamente mais tarde.</p>`;
-                calculateAndDisplayAverageRating([]); // Zera a média em caso de erro
-            }
-        }
+		async function fetchGamesData() {
+			// VARIÁVEL DE CONFIGURAÇÃO:
+			// O caminho deve ser relativo ao seu domínio na Netlify.
+			// Se o arquivo JSON está na pasta raiz do seu projeto Netlify, use 'gamesplayed.json'.
+			const gamesJsonUrl = 'gamesplayed.json'; 
 
+			console.log(`Buscando dados em: ${gamesJsonUrl}`); // Ajuda a depurar
+    
+			try {
+				// 1. Requisição para o domínio da Netlify (naoehprojogou.netlify.app/gamesplayed.json)
+				// Isso utiliza o cache da Netlify, resolvendo o problema de 60 requisições/hora do GitHub Raw.
+				const response = await fetch(gamesJsonUrl);
+
+				if (!response.ok) {
+					// Se a Netlify retornar um erro (ex: 404 Not Found se o caminho estiver errado, ou 429, que seria raro aqui)
+					throw new Error(`Erro ao carregar o arquivo JSON: ${response.status} ${response.statusText}`);
+				}
+
+				gamesData = await response.json();
+        
+				// 2. Executa a lógica de exibição
+				// Garante que a função 'displayGames' e a variável 'gamesData' estejam definidas globalmente ou passadas corretamente.
+				displayGames(gamesData);
+
+			} catch (error) {
+				console.error("Erro ao carregar os dados dos jogos:", error);
+				// Tratamento de erro na interface do usuário
+				gameContainer.innerHTML = `<p class="text-center text-red-400 mt-8 col-span-full">Ops! Não foi possível carregar os jogos. Verifique se o arquivo JSON está no seu repositório.</p>`;
+				calculateAndDisplayAverageRating([]); // Zera a média
+			}
+		}
         // Inicia o carregamento dos jogos ao carregar a página
         fetchGamesData();
     </script>
