@@ -310,6 +310,16 @@
 		"data-adicao": "18/01/2026"
 	},
 	{
+		"titulo": "Oceanhorn - Monster of Uncharted Seas",
+		"plataforma": "PC - Steam",
+		"nota": 2.5,
+		"avaliacao": "Um jogo recomendado por um viewer, e pesquisando sobre descobri que o jogo é baseado no jogo Legend Of Zelda e é 3D mas com visão isométrica (isso foi meio estranho, tipo pra que fazer 3D, sendo que é isométrico??). O jogo é legal mas no meu computador ele teve problemas de execução e teve momentos em que ele trava, e o mesmo ocorreu em dois sistemas operacionais. Embora que quando tentei jogar estava utilizando com o OBS, fechei o OBS mas o problema continuava com menor incidência. Então pra resumir o jogo parece ser muito bom e muito divertido mas os probleemas que tive de travamentos reduziram minha experiência o que faz a nota cair um pouco mais.<br><br>Essa gameplay ficou sem audio nenhum (pra mim estava normal e como foi live e ninguem falou nada ficou dessa forma mesmo), então fica as imagens da gameplay",
+		"link": "https://store.steampowered.com/app/339200/Oceanhorn_Monster_of_Uncharted_Seas/",
+		"gameplay": "https://www.youtube.com/live/SKuGo6rgNaE?si=yXCrAZfypOTP3YFa",
+		"palavras-chave": ["Oceanhorn","monster of uncharted seas","rpg","legend of zelda like","3D","visão isométrica","divertido","problemas na execução","vale a pena"],
+		"data-adicao": "15/01/2026"
+	},
+	{
 		"titulo": "Neon White",
 		"plataforma": "PS5",
 		"nota": 2.5,
@@ -318,5 +328,15 @@
 		"gameplay": "https://www.youtube.com/watch?v=63Ro4w6bLMA&list=PLdRPIKeYLun4qQvQrB3fMobF-2ZmFokV6&index=3",
 		"palavras-chave": ["Neon White","gameplay","parkour","Soul Cards","corrida","First Person Shooter (FPS)","Speedrun","dificuldade","vale a pena"],
 		"data-adicao": "18/01/2026"
+	},
+	{
+		"titulo": "Oceanhorn - Monster of Uncharted Seas",
+		"plataforma": "PC - Steam",
+		"nota": 2.5,
+		"avaliacao": "Um jogo recomendado por um viewer, e pesquisando sobre descobri que o jogo é baseado no jogo Legend Of Zelda e é 3D mas com visão isométrica (isso foi meio estranho, tipo pra que fazer 3D, sendo que é isométrico??). O jogo é legal mas no meu computador ele teve problemas de execução e teve momentos em que ele trava, e o mesmo ocorreu em dois sistemas operacionais. Embora que quando tentei jogar estava utilizando com o OBS, fechei o OBS mas o problema continuava com menor incidência. Então pra resumir o jogo parece ser muito bom e muito divertido mas os probleemas que tive de travamentos reduziram minha experiência o que faz a nota cair um pouco mais.<br><br>Essa gameplay ficou sem audio nenhum (pra mim estava normal e como foi live e ninguem falou nada ficou dessa forma mesmo), então fica as imagens da gameplay",
+		"link": "https://store.steampowered.com/app/339200/Oceanhorn_Monster_of_Uncharted_Seas/",
+		"gameplay": "https://www.youtube.com/live/SKuGo6rgNaE?si=yXCrAZfypOTP3YFa",
+		"palavras-chave": ["Oceanhorn","monster of uncharted seas","rpg","legend of zelda like","3D","visão isométrica","divertido","problemas na execução","vale a pena"],
+		"data-adicao": "15/01/2026"
 	}
 ]
