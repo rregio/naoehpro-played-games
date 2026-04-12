@@ -358,5 +358,14 @@
 		"gameplay": "https://www.youtube.com/live/zcD8fE7Ksqs",
 		"palavras-chave": ["Oceanhorn","chronos dungeon","rpg","old rpg like","2D","visão isométrica","divertido","sem problemas na execução","vale a pena"],
 		"data-adicao": "03/02/2026"
-	}
+	},{
+    "titulo": "Undisputed",
+    "plataforma": "PS5",
+    "nota": 3.5,
+    "avaliacao": "Testei esse simulador de boxe no PS5 e a experiência foi intensa, pra não dizer dolorosa! O jogo foca muito no realismo, o que o torna difícil de dominar logo de cara. Testei tanto o boxe masculino quanto o feminino e criei meu próprio lutador no modo carreira, o 'Profissa'. Apanhei bastante da CPU no nível médio até conseguir minha primeira vitória por nocaute com a Clarissa Shields. Os gráficos são ótimos e os movimentos dos lutadores reais como Mohamed Ali e Rocky Marciano impressionam. Senti um pouco de dificuldade na gestão da estamina e nos esquivos, o que me rendeu vários cortes no rosto e derrotas por decisão unânime. No geral, achei um jogo sólido para quem busca um simulador sério, mas exige muita paciência para aprender os combos e o tempo certo de contra-ataque.",
+    "link": "https://www.playstation.com/pt-br/games/undisputed/",
+    "gameplay": "https://www.youtube.com/live/J7uq-oE1IrQ?si=yn3ac-2QOCUxLSLh",
+    "palavras-chave": ["Undisputed", "boxe", "simulador", "PS5", "modo carreira", "Mohamed Ali", "luta", "nocaute", "vale a pena"],
+    "data-adicao": "02/03/2026"
+}
 ]
