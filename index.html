@@ -146,6 +146,7 @@ pintrk('page');
  * @param {Object} game O objeto do jogo a ser exibido.
  */
 function showGameDetail(game) {
+	window.history.pushState({}, '', `?jogo=${encodeURIComponent(game.titulo)}`);
     // Oculta a lista e exibe a visualização de detalhes
     gameListView.classList.add('hidden');
     gameDetailView.classList.remove('hidden');
@@ -224,7 +225,8 @@ function showGameDetail(game) {
          * Exibe a lista de jogos novamente, ocultando a página de detalhes.
          */
         function showGameList() {
-            gameDetailView.classList.add('hidden');
+            window.history.pushState({}, '', window.location.pathname); // Limpa a URL ao voltar
+    		gameDetailView.classList.add('hidden');
             gameListView.classList.remove('hidden');
         }
 
@@ -263,8 +265,8 @@ function showGameDetail(game) {
                     card.innerHTML = `
                         <div>
                             <h2 class="text-2xl font-semibold mb-2 text-indigo-400 hover:underline">
-                                ${game.titulo}
-                            </h2>
+    <a href="?jogo=${encodeURIComponent(game.titulo)}">${game.titulo}</a>
+</h2>
                             <div class="text-sm text-gray-400 mb-2">
                                 <i class="fas fa-gamepad"></i>
                                 <span class="ml-1">${game.plataforma}</span>
@@ -298,38 +300,33 @@ function showGameDetail(game) {
         /**
          * Busca os dados dos jogos do arquivo JSON e exibe na página.
          */
-		async function fetchGamesData() {
-			// VARIÁVEL DE CONFIGURAÇÃO:
-			// O caminho deve ser relativo ao seu domínio na Netlify.
-			// Se o arquivo JSON está na pasta raiz do seu projeto Netlify, use 'gamesplayed.json'.
-			const gamesJsonUrl = 'gamesplayed.json'; 
-
-			console.log(`Buscando dados em: ${gamesJsonUrl}`); // Ajuda a depurar
-    
-			try {
-				// 1. Requisição para o domínio da Netlify (naoehprojogou.netlify.app/gamesplayed.json)
-				// Isso utiliza o cache da Netlify, resolvendo o problema de 60 requisições/hora do GitHub Raw.
-				const response = await fetch(gamesJsonUrl);
-
-				if (!response.ok) {
-					// Se a Netlify retornar um erro (ex: 404 Not Found se o caminho estiver errado, ou 429, que seria raro aqui)
-					throw new Error(`Erro ao carregar o arquivo JSON: ${response.status} ${response.statusText}`);
-				}
-
-				gamesData = await response.json();
+async function fetchGamesData() {
+    const gamesJsonUrl = 'gamesplayed.json';
+    try {
+        const response = await fetch(gamesJsonUrl);
+        if (!response.ok) throw new Error(`Erro: ${response.status}`);
         
-				// 2. Executa a lógica de exibição
-				// Garante que a função 'displayGames' e a variável 'gamesData' estejam definidas globalmente ou passadas corretamente.
-				displayGames(gamesData);
+        gamesData = await response.json();
+        displayGames(gamesData);
 
-			} catch (error) {
-				console.error("Erro ao carregar os dados dos jogos:", error);
-				// Tratamento de erro na interface do usuário
-				gameContainer.innerHTML = `<p class="text-center text-red-400 mt-8 col-span-full">Ops! Não foi possível carregar os jogos. Verifique se o arquivo JSON está no seu repositório.</p>`;
-				calculateAndDisplayAverageRating([]); // Zera a média
-			}
-		}
-        // Inicia o carregamento dos jogos ao carregar a página
+        // --- NOVO: Lógica para ler a URL ---
+        const urlParams = new URLSearchParams(window.location.search);
+        const jogoNome = urlParams.get('jogo');
+
+        if (jogoNome) {
+            // Procura o jogo no JSON pelo título
+            const jogoEncontrado = gamesData.find(g => g.titulo === jogoNome);
+            if (jogoEncontrado) {
+                showGameDetail(jogoEncontrado);
+            }
+        }
+        // -----------------------------------
+
+    } catch (error) {
+        console.error("Erro ao carregar os dados:", error);
+        gameContainer.innerHTML = `<p class="text-center text-red-400 mt-8 col-span-full">Erro ao carregar os jogos.</p>`;
+    }
+}        // Inicia o carregamento dos jogos ao carregar a página
         fetchGamesData();
     </script>
 </body>
